@@ -2,7 +2,7 @@
 
 Here are my dot files.
 
-needed:
+<p>needed:
 avizo (macos like osd)
 swaync (notification daemon)
 wofi (program launcher)
@@ -10,5 +10,5 @@ hyprpaper (wallpaper manager)
 hyprlock (fancy screenlocker)
 hypridle (idle daemon)
 nwg-look (gtk settings gui)
-waybar (status bar)
+waybar (status bar)</p>
 
