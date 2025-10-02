@@ -2,6 +2,8 @@
 
 Here are my dot files.
 
+<img src="./desktop.gif"/>
+
 <p>needed:</p>
 <p>avizo (macos like osd)</p>
 <p>swaync (notification daemon)</p>
