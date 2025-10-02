@@ -1,4 +1,4 @@
-# My Entire Hyprland Setup and other dots
+# My  Hyprland Setup 
 
 Here are my dot files.
 
