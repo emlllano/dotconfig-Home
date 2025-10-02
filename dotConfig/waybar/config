@@ -1,0 +1,164 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 0, // Waybar height (to be removed for auto height)
+    "width": 0, // Waybar width (0 == auto)
+    "spacing": 10, // Gaps between modules
+    "margin": 5,
+    "margin-bottom": 5,
+    "margin-top": 0,
+    "gtk-layer-shell": true,
+    "modules-left": [
+        "custom/appsmenu",
+        "hyprland/workspaces",
+        "hyprland/window"
+
+    ],
+    "modules-right": [
+
+        "tray",
+        "pulseaudio",
+        "bluetooth",
+        "disk",
+        "network",
+        "clock",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+	"format": "{name}",
+       "persistent-workspaces": {
+             "*": 5,
+       }
+
+	},
+
+
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) <span color=\"#ebebeb\"></span> ",
+        "format-ethernet": "<span color=\"#ebebeb\">󰲝</span>",
+        "tooltip-format": "{ifname} via {gwaddr} <span color=\"#ebebeb\">󰲝</span>",
+        "format-linked": "{ifname} (No IP) <span color=\"#ebebeb\">󰲝</span>",
+        "format-disconnected": "Disconnected",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "on-click": "nm-connection-editor",
+        "on-click-right": "nm-connection-editor"
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "Europe/Paris",
+	     "interval": 1,
+        "format": "{:%h %d %H:%M} <span color=\"#ebebeb\"></span>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "on-click": "gnome-calendar"
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "<span color=\"#ebebeb\">{icon}</span>",
+        "format-bluetooth": "{volume}% <span color=\"#ebebeb\">{icon} </span>",
+        "format-bluetooth-muted": "MUTED  ",
+        "format-muted": "",
+        "format-source": "{volume}% <span color=\"#ebebeb\"></span>",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": ["", "", "", "", ""]
+        },
+        "on-double-click": "pavucontrol",
+        "on-click": "pulsemixer --unmute",
+        "on-click-right": "pulsemixer --mute"
+    },
+
+    "custom/maximize": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch fullscreen",
+            "rewrite": {
+            // if any window is focused display desktop
+            "^(?!.*\\S).*": ""
+        }
+    },
+
+    "custom/wclose": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch killactive",
+        "rewrite": {
+            // if any window is focused display desktop
+            "^(?!.*\\S).*": ""
+        }
+    },
+    "hyprland/window": {
+		"format": "{}",
+		"max-length": 120,
+		"separate-outputs": true,
+		"rewrite": {
+            // if any window is focused display desktop
+            "^(?!.*\\S).*": "Desktop"
+        }
+    },
+
+
+    "disk": {
+    "interval": 5,
+    "format": "<span color=\"#ebebeb\">󰋊</span>",
+    "tooltip": true,
+    "tooltip-format": "{used}/{total}",
+    "path": "/"
+    },
+
+"custom/weather": {
+		"format": "<span color=\"#ebebeb\"> {} </span>",
+		"exec"  : "curl -s wttr.in/Toulouse?format=%C%t+%P%w",
+		"interval" : 200,
+	  "tooltip": false
+	},
+
+  "bluetooth": {
+    "format": "<span color=\"#ebebeb\">󰂯</span>",
+    "interval": 10,
+    "on-click": "overskride"
+    },
+
+"custom/appsmenu": {
+    "format": "  V",
+        "tooltip":false,
+		"menu": "on-click",
+		"menu-file": "~/.config/waybar/apps.xml",
+		"menu-actions": {
+			"files": "nautilus </dev/null &>/dev/null &",
+			"editor": "zeditor </dev/null &>/dev/null &",
+			"obsidian": "obsidian </dev/null &>/dev/null &",
+			"terminal": "kitty </dev/null &>/dev/null &",
+			"browser": "brave </dev/null &>/dev/null &",
+			"todo": "errands </dev/null &>/dev/null &",
+			"signal": "signal-desktop </dev/null &>/dev/null &",
+			"discord": "discord </dev/null &>/dev/null &",
+			"steam": "steam </dev/null &>/dev/null &",
+			"vlc": "vlc </dev/null &>/dev/null &",
+			"looks": "nwg-look </dev/null &>/dev/null &",
+		},
+
+
+},
+
+"custom/power": {
+	"format" : "󰐥  ",
+		"tooltip": false,
+		"restart-interval": 1,
+		"menu": "on-click",
+		"menu-file": "~/.config/waybar/power_menu.xml",
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"lock": "hyprlock",
+			"hibernate": "systemctl hibernate",
+		},
+ }
+}

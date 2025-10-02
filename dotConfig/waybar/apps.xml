@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+	<object class="GtkMenu" id="menu">
+		<child>
+			<object class="GtkMenuItem" id="files">
+				<property name="label">  Files</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="editor">
+				<property name="label"> 󰈮 Editor</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="obsidian">
+				<property name="label"> 󰎚 Obsidian</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="terminal">
+				<property name="label">  Terminal</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="browser">
+				<property name="label">  Browser</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="todo">
+				<property name="label">  Todo</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="signal">
+				<property name="label"> 󰚢 Signal</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="discord">
+				<property name="label">  Discord</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="steam">
+				<property name="label">  Steam</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="vlc">
+				<property name="label"> 󰕼 Vlc</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkMenuItem" id="looks">
+				<property name="label">  Looks</property>
+			</object>
+		</child>
+	</object>
+</interface>
